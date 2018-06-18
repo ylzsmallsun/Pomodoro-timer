@@ -7,5 +7,9 @@ export default {
   },
   setLongBreak (state, longBreak) {
     state.config.longBreak = longBreak
+  },
+  setUser (state, value) {
+    state.user = value
+    state.isAnonymous = value.isAnonymous
   }
 }

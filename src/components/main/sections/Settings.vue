@@ -36,7 +36,8 @@ import SetTimer from './timer/SetTimer'
 export default {
   computed: {
     ...mapGetters({
-      config: 'getConfig'
+      config: 'getConfig',
+      settings: 'getSettings'
     })
   },
   components: {

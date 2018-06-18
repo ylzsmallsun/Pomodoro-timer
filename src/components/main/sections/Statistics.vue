@@ -1,10 +1,19 @@
 <template>
-  <div></div>
+  <div class="container">
+    <h1>Statistics</h1>
+    <p>Total Pomodoros:{{statistics.totalPomodoros}}</p>
+  </div>
 </template>
 
 <script>
-export default {
+import {mapGetters} from 'vuex'
 
+export default {
+  computed: {
+    ...mapGetters({
+      statistics: 'getStatistics'
+    })
+  }
 }
 </script>
 <style lang="scss" scoped>

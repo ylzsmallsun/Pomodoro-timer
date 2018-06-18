@@ -1,16 +1,22 @@
 <template>
   <div class="container">
     <pomodoro-timer></pomodoro-timer>
-    <settings></settings>
+    <settings v-if='user && !isAnonymous'></settings>
+    <statistics v-if='user && !isAnonymous'></statistics>
   </div>
 </template>
 
 <script>
-import { PomodoroTimer, Settings } from './sections'
+import { PomodoroTimer, Settings, Statistics } from './sections'
+import { mapState } from 'vuex'
 export default {
+  computed: {
+    ...mapState(['user', 'isAnonymous'])
+  },
   components: {
     PomodoroTimer,
-    Settings
+    Settings,
+    Statistics
   }
 }
 </script>
