@@ -20,12 +20,12 @@ export default {
     ...mapState(['user'])
   },
   methods: {
-    ...mapActions(['bindStatistics', 'bindConfig', 'bindAuth'])
+    ...mapActions(['bindAuth'])
   },
   created () {
     this.bindAuth()
-    this.bindConfig()
-    this.bindStatistics()
+    // this.bindConfig()
+    // this.bindStatistics()
   }
 }
 </script>
