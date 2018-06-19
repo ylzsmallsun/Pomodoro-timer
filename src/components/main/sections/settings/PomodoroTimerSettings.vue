@@ -1,0 +1,50 @@
+<template>
+  <div class="container">
+    <h2>Set your pomodoro timer</h2>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-5 col-sm-10">
+        <set-timer :value="config.workingPomodoro" @valueChanged="setWorkingPomodoro"></set-timer>
+        <div class="figure-caption">Pomodoro</div>
+      </div>
+      <div class="col-md-3 col-sm-10">
+        <set-timer :value="config.shortBreak" @valueChanged="setShortBreak"></set-timer>
+        <div class="figure-caption">Short break</div>
+      </div>
+      <div class="col-md-4 col-sm-10">
+        <set-timer :value="config.longBreak" @valueChanged="setLongBreak"></set-timer>
+        <div class="figure-caption">Long break</div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import {mapGetters, mapActions} from 'vuex'
+import SvgCircleSector from '../timer/SvgCircleSector'
+import SetTimer from '../timer/SetTimer'
+
+export default {
+  computed: {
+    ...mapGetters({
+      config: 'getConfig',
+      settings: 'getSettings'
+    })
+  },
+  components: {
+    SvgCircleSector,
+    SetTimer
+  },
+  methods: {
+    ...mapActions([
+      'setWorkingPomodoro',
+      'setShortBreak',
+      'setLongBreak'
+    ])
+  }
+}
+</script>
+<style lang="scss" scoped>
+.figure-caption {
+  text-align: center;
+}
+</style>

@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <pomodoro-timer></pomodoro-timer>
-    <settings v-if='user && !isAnonymous'></settings>
-    <statistics v-if='user && !isAnonymous'></statistics>
+    <settings v-if='user && !user.isAnonymous'></settings>
+    <statistics v-if='user && !user.isAnonymous'></statistics>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ import { PomodoroTimer, Settings, Statistics } from './sections'
 import { mapState } from 'vuex'
 export default {
   computed: {
-    ...mapState(['user', 'isAnonymous'])
+    ...mapState(['user'])
   },
   components: {
     PomodoroTimer,

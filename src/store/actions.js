@@ -46,6 +46,23 @@ export default {
       commit('setLongBreak', parseInt(longBreak, 10))
     }
   },
+  updateUserName ({state, commit}, displayName) {
+    state.user.updateProfile({
+      displayName
+    })
+  },
+  updatePhotoURL ({state, commit}, photoURL) {
+    state.user.updateProfile({
+      photoURL
+    })
+  },
+  updateUserEmail ({state}, email) {
+    state.user.updateEmail(email).then(() => {
+
+    }, error => {
+      console.log(error)
+    })
+  },
   updateTotalPomodoros ({state}, totalPomodoros) {
     state.statisticsRef.update({totalPomodoros: totalPomodoros})
   },
