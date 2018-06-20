@@ -50,6 +50,7 @@ export default {
     state.user.updateProfile({
       displayName
     })
+    commit('setDisplayName', displayName)
   },
   updatePhotoURL ({state, commit}, photoURL) {
     state.user.updateProfile({

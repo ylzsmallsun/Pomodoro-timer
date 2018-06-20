@@ -19,11 +19,13 @@ const statistics = {
 const user = null
 const configRef = null
 const statisticsRef = null
+const displayName = ''
 export default {
   config,
   settings,
   statistics,
   user,
   configRef,
-  statisticsRef
+  statisticsRef,
+  displayName
 }

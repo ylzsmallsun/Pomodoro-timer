@@ -32,7 +32,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({user: 'getUser'})
+    ...mapGetters({user: 'getUSer'})
   },
   created () {
     this.displayName = this.user.displayName

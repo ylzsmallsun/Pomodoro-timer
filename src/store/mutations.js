@@ -12,6 +12,9 @@ export default {
     state.user = value
     // state.isAnonymous = value.isAnonymous
   },
+  setDisplayName (state, value) {
+    state.displayName = value
+  },
   setConfigRef (state, value) {
     state.configRef = value
   },
