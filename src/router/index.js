@@ -1,9 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import LandingPage from '@/components/LandingPage'
-// import MainContent from '@/components/MainContent'
-import { PomodoroTimer, Settings, Statistics, Workouts } from '@/components/main/sections'
 import store from '@/store'
+// import { PomodoroTimer, Settings, Statistics, Workouts } from '@/components/main/sections'
+
+// lazy loading resources
+const PomodoroTimer = () => import('@/components/main/sections/PomodoroTimer')
+const Settings = () => import('@/components/main/sections/Settings')
+const Statistics = () => import('@/components/main/sections/Statistics')
+const Workouts = () => import('@/components/main/sections/Workouts')
 
 Vue.use(Router)
 
