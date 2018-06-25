@@ -11,7 +11,10 @@ console.log(firebaseApp)
 function _uploadImage (file) {
   let ref = firebaseApp.storage().ref().child('workouts')
   return ref.child(uuidv1()).child(file.name).put(file).then(snapshot => {
-    return snapshot.downloadURL
+    return snapshot.ref.getDownloadURL().then(function (downloadURL) {
+      console.log('File available at', downloadURL)
+      return downloadURL
+    })
   })
 }
 export default {
