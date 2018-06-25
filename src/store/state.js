@@ -19,6 +19,7 @@ const statistics = {
 const user = null
 const configRef = null
 const statisticsRef = null
+const workoutsRef = null
 const displayName = ''
 export default {
   config,
@@ -27,5 +28,7 @@ export default {
   user,
   configRef,
   statisticsRef,
-  displayName
+  workoutsRef,
+  displayName,
+  workouts: []
 }

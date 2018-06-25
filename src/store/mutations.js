@@ -20,5 +20,8 @@ export default {
   },
   setStatisticsRef (state, value) {
     state.statisticsRef = value
+  },
+  setWorkoutsRef (state, value) {
+    state.workoutsRef = value
   }
 }
